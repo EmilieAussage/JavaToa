@@ -29,56 +29,78 @@ books.forEach ((x) => {
 // ---------Question Number 2 -----------
 
 console.log(`Quel est livre le plus emprunté ?`)
-
-//afficher le chiffre rented le plus eleve => .find rented.firstnumber
+// console.log(`Livre le plus emprunté : {largest}`)
 
 // var largest = Math.max.apply(null, books.rented)
 
-// console.log(`Livre le plus emprunté : {largest}`)
+//on classe les books par ordre de livres empruntés.
+books.sort((a, b) => (a.rented < b.rented) ? 1 : -1)
 
-
-function getrentedmax(array){
-  return MAuthenticatorAssertionResponse.max.apply(null, array);
-}
-
-var maxrentedbooks = getrentedmax(books.rented);
-
-
-
-max = books.reduce(function(a, b) {
-  return Math.max(a, b);
-});
-
-
-Math.max.apply(Math, books.map(function(o) { 
-  return o.rented; 
-}))
-
-
-
-
-let min = testArray[0];
-for (let i = 1; i < testArrayLength; ++i) {
-  if (testArray[i] < min) {
-    min = testArray[i];
-  }
-}
+//on sélectionne la première array ===> YouupiiII
+console.log(books[0])
 
 // ---------Question Number 3 -----------
 
-// console.log(`Quel est le livre le moins emprunté ?`)
+console.log(`Quel est le livre le moins emprunté ?`)
 
+books.sort((a, b) => (a.rented > b.rented) ? 1 : -1)
+
+console.log(books[0])
+
+ // ===> YouupiiII ça marche
 
 // ---------Question Number 4 -----------
 
-// console.log(`Trouve le livre avec l'ID: 873495 ;`)
+console.log(`Trouve le livre avec l'ID: 873495 ;`)
 
+books.forEach ((i) => {
+  if (i.id === 873495) {
+  console.log(`Voici le livre dont l'ID est 873495: ${i.title} `) }
+})
 
 // ---------Question Number 5 -----------
 
-// console.log('Supprime le livre avec l'ID: 133712')
+console.log("Supprime le livre avec l'ID: 133712")
 
 
-// ---------Question Number 5 -----------
+for(let i = 0; i < books.length; i++){
+  if(books[i].id === 133712){
+    delete(books[i])
+    console.log(books)}
+  }
 
-// console.log('Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé).')
+
+// const found = books.find(goodbook => {
+//   if (books[goodbook.id] === 133712){
+//     goodbook.delete 
+//     console.log(`Les livre est normalement supprimé parmis la lsite suivante: ${books} `)}
+// })
+  
+
+// const found = books.find(goodbook => {
+//   if (books[goodbook.id] === 133712){
+//     goodbook.delete 
+//     console.log(`Les livre est normalement supprimé parmis la lsite suivante: ${books} `)}
+// })
+
+// console.log(books)
+
+
+// ---------Question Number 6 -----------
+
+// console.log("Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé")
+
+// books.sort(function(a,b) 
+// {
+//   var nameA = a.last.toUpperCase();
+//   var nameB = b.last.toUpperCase();
+//   if (nameA < nameB) //sort string ascending
+//     return -1
+//   if (nameA > nameB)
+//     return 1
+//   return 0 //default return value (no sorting)
+// });
+
+
+// console.log(books)
+
