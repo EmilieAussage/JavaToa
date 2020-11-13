@@ -63,44 +63,34 @@ books.forEach ((i) => {
 console.log("Supprime le livre avec l'ID: 133712")
 
 
-for(let i = 0; i < books.length; i++){
-  if(books[i].id === 133712){
-    delete(books[i])
-    console.log(books)}
-  }
+
+let delete_book = books.find( goodbook => goodbook.id === 133712);
+books.splice(delete_book, 1);
+console.log(books);
+
+// for(let i = 0; i < books.length; i++){
+//   if(books[i].id === 133712){
+//     delete(books[i])
+//     console.log(books)}
+//   }
 
 
-// const found = books.find(goodbook => {
-//   if (books[goodbook.id] === 133712){
-//     goodbook.delete 
-//     console.log(`Les livre est normalement supprimé parmis la lsite suivante: ${books} `)}
-// })
-  
-
-// const found = books.find(goodbook => {
-//   if (books[goodbook.id] === 133712){
-//     goodbook.delete 
-//     console.log(`Les livre est normalement supprimé parmis la lsite suivante: ${books} `)}
-// })
-
-// console.log(books)
 
 
 // ---------Question Number 6 -----------
 
 // console.log("Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé")
 
-// books.sort(function(a,b) 
-// {
-//   var nameA = a.last.toUpperCase();
-//   var nameB = b.last.toUpperCase();
-//   if (nameA < nameB) //sort string ascending
-//     return -1
-//   if (nameA > nameB)
-//     return 1
-//   return 0 //default return value (no sorting)
-// });
-
+books.sort(function(a,b)
+{
+  var nameA = a.title.toUpperCase();
+  var nameB = b.title.toUpperCase();
+  if (nameA < nameB) //sort string ascending
+    return -1
+  if (nameA > nameB)
+    return 1
+  return 0 //default return value (no sorting)
+});
 
 // console.log(books)
 
