@@ -1,3 +1,6 @@
+
+console.log(`Bonjour monde !`)
+
 let username;
 
 
