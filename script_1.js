@@ -1,5 +1,5 @@
 
-console.log(`Bonjour monde !`)
+console.log(`Bonjour monde !`);
 
 let username;
 
